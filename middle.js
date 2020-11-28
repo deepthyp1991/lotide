@@ -5,18 +5,14 @@ const middle = function(arr){
   if(arr.length <= 2){
     return  newValue
   }
-
-  
   else if(arr.length > 2){
-
-    if (arr.length%2===0)
-   {let avg = (arr[(arr.length/2)-1].toString() + ','+ arr[arr.length/2]. toString()) 
-   return [avg]
-   }
-    else 
-    {theMiddle = Math.floor(arr.length/2)
-    value= arr[theMiddle] 
-  }
+    if (arr.length%2===0){
+      let avg = (arr[(arr.length/2)-1].toString() + ','+ arr[arr.length/2]. toString()) 
+      return [avg]
+    }else {
+      theMiddle = Math.floor(arr.length/2)
+      value= arr[theMiddle] 
+    }
   }
 return [value] 
 }
