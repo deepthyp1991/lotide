@@ -14,4 +14,4 @@ const letterPosition = function(string){
   return result
 
 }
-console.log(letterPosition("lighthouse in the house"))
+module.exports = letterPosition

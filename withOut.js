@@ -22,16 +22,14 @@ const assertArraysEqual = function(arr1, arr2){
   }
 }
 
-const without = function(source, itemsToRemove){
-  let newArray = [...source]
-  for(let i = 0; i < newArray.length; i++){
-    if(source[i] === values){
-      let removedItem = newArray.indexOf(values)
-      newArray.splice(removedItem,1)
-    }
+let without = function(source, itemsToRemove) {
+  let output = [];
+  //add items to output from source only if they don't exist in itemsToRemove
+  for (let item of source) {
+    if (!itemInArray(item, itemsToRemove)) output.push(item);
+    // }
   }
-  return newArray
-}
+  return output;
+};
 
-without([1, 2, 3], [1]) // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+module.exports = without

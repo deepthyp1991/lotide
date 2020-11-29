@@ -1,24 +1,21 @@
-const middle = function(arr){
-  let value = ''
-  let newValue = []
-  let theMiddle = ''
-  if(arr.length <= 2){
-    return  newValue
+const middle = function(inputArray){
+  let output = [];//returns by default
+  let midIndex = 0;
+  if (inputArray.length > 2 && inputArray.length % 2 === 0) {
+    //return both middle items
+    midIndex = inputArray.length / 2;
+    output.push(inputArray[midIndex - 1]);
+    output.push(inputArray[midIndex]);
+    // console.log(`Hello! miditem index is ${midIndex}`);
+  } else if (inputArray.length > 2 && inputArray.length % 2 !== 0) {
+    midIndex = Math.floor(inputArray.length / 2);
+    // console.log(`Hello! miditem index is ${midIndex}`);
+
+    //return middle item only
+    output.push(inputArray[midIndex]);
   }
-  else if(arr.length > 2){
-    if (arr.length%2===0){
-      let avg = (arr[(arr.length/2)-1].toString() + ','+ arr[arr.length/2]. toString()) 
-      return [avg]
-    }else {
-      theMiddle = Math.floor(arr.length/2)
-      value= arr[theMiddle] 
-    }
-  }
-return [value] 
+  return output;
 }
-console.log(middle([1])) // => []
-console.log(middle([1, 2])) // => []
-console.log(middle([1, 2, 3, 4]))// => [2]
-console.log(middle([1, 2, 3, 4, 5])) // => [3]
-console.log(middle([1,2,3,4,5,6,7,8,9]))
-console.log(middle([1, 2, 3, 4, 5, 6, 7,8,9,10]))
+
+module.exports = middle
+

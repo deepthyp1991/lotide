@@ -13,5 +13,4 @@ const bestTVShowsByGenre = {
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"))
-console.log(findKeyByValue(bestTVShowsByGenre, "Deepthy"))
+module.exports = findKeyByValue
